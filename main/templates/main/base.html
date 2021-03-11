@@ -7,7 +7,7 @@
         <title>Construction HTML-5 Template</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="manifest" href="site.webmanifest">
+
 		<link rel="shortcut icon" type="image/x-icon" href="{% static 'main/assets/img/favicon.ico' %}">
 
 		<!-- CSS here -->
@@ -30,7 +30,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{% static 'main/assets/img/logo/logo-regency.jpg' %}" alt="">
+                    <img src="{% static 'main/assets/img/logo/regency-logo.jpg' %}" alt="">
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
                                     <!-- logo-1 -->
-                                    <a href="index.html" class="big-logo"><img src="{% static 'main/assets/img/logo/logo.png' %}" alt=""></a>
+                                    <a href="index.html" class="big-logo"><img src="{% static 'main/assets/img/logo/regency-logo.jpg' %}" alt="" style="max-width: 155px"></a>
                                     <!-- logo-2 -->
                                     <a href="index.html" class="small-logo"><img src="{% static 'main/assets/img/logo/loder-logo.png' %}" alt=""></a>
                                 </div>
@@ -81,22 +81,17 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="about.html">Who We Are</a></li>
+                                            <li><a href="blog.html">What We Do</a>
+                                                <ul class="submenu">
+                                                    <li><a href="mining.html">Mining</a></li>
+                                                    <li><a href="agriculture.html">Agriculture</a></li>
+                                                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                                                    <li><a href="power.html">Power</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="project.html">Projects</a></li>
-                                            <li><a href="services.html">Services</a></li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="elements.html">Element</a></li>
-                                                    <li><a href="project_details.html">Projects Details</a></li>
-                                                    <li><a href="services_details.html">Services Details</a></li>
-                                                </ul>
-                                            </li>
+                                            <li><a href="news.html">News</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -235,7 +230,7 @@
 		<script src="{% static 'main/assets/js/jquery.sticky.js' %}"></script>
 
         <!-- counter , waypoint -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js' %}"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
         <script src="{% static 'main/assets/js/jquery.counterup.min.js' %}"></script>
 
         <!-- contact js -->
