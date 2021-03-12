@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class Project(models.Model):
     title = models.CharField(max_length=100)
 
@@ -24,3 +24,14 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Testimonials:
+    author = models.CharField(max_length=100)
+    testimonial = models.CharField(max_length=255)
+    occupation = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.author
+
+
