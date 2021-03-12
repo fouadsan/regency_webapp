@@ -3,7 +3,7 @@
 
 {% block content %}
     <!-- slider Area Start-->
-        <div class="slider-area ">
+        <div class="slider-area" id="welcome">
             <div class="slider-active">
                 <div class="single-slider  hero-overly slider-height d-flex align-items-center" data-background="{% static 'main/assets/img/hero/h1_hero.jpg' %}" style="no-repeat scroll center center / cover;">
                     <div class="container">
@@ -458,47 +458,28 @@
                     <div class="col-xl-10 col-lg-11 col-md-10 offset-xl-1">
                         <div class="h1-testimonial-active">
                             <!-- Single Testimonial -->
-                            <div class="single-testimonial">
-                                 <!-- Testimonial Content -->
-                                <div class="testimonial-caption ">
-                                    <div class="testimonial-top-cap">
-                                        <!-- SVG icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86px" height="63px">
-                                        <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 2555, 255)" fill-opacity="0" fill="rgb(0, 0, 0)"
-                                        d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
-                                        </svg>
-                                        <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjn.</p>
-                                    </div>
-                                    <!-- founder -->
-                                    <div class="testimonial-founder d-flex align-items-center">
-                                       <div class="founder-text">
-                                            <span>Jessya Inn</span>
-                                            <p>Co Founder</p>
-                                       </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial">
-                                 <!-- Testimonial Content -->
-                                <div class="testimonial-caption ">
-                                    <div class="testimonial-top-cap">
-                                        <!-- SVG icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86px" height="63px">
-                                        <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 95, 19)" fill-opacity="0" fill="rgb(0, 0, 0)"
-                                        d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
-                                        </svg>
-                                        <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjn.</p>
-                                    </div>
-                                    <!-- founder -->
-                                    <div class="testimonial-founder d-flex align-items-center">
-                                       <div class="founder-text">
-                                            <span>Jessya Inn</span>
-                                            <p>Co Founder</p>
-                                       </div>
+                            {% for testimonial in testimonials %}
+                                <div class="single-testimonial">
+                                     <!-- Testimonial Content -->
+                                    <div class="testimonial-caption ">
+                                        <div class="testimonial-top-cap">
+                                            <!-- SVG icon -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86px" height="63px">
+                                            <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 2555, 255)" fill-opacity="0" fill="rgb(0, 0, 0)"
+                                            d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
+                                            </svg>
+                                            <p>{{ testimonial.testimonial }}</p>
+                                        </div>
+                                        <!-- founder -->
+                                        <div class="testimonial-founder d-flex align-items-center">
+                                           <div class="founder-text">
+                                                <span>{{ testimonial.author }}</span>
+                                                <p>{{ testimonial.occupation }}</p>
+                                           </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                </div>
@@ -521,46 +502,27 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <!-- single-news -->
-                        <div class="single-news mb-30">
-                            <div class="news-img">
-                                <img src="{% static 'main/assets/img/david/david_1.png' %}" alt="">
-                                <div class="news-date text-center">
-                                    <span>24</span>
-                                    <p>Now</p>
+                    {% for post in posts %}
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <!-- single-news -->
+                            <div class="single-news mb-30">
+                                <div class="news-img">
+                                    <img src="{{ post.image }}" alt="">
+                                    <div class="news-date text-center">
+                                        <span>{{ post.timestamp|date:"d" }}</span>
+                                        <p>{{ post.timestamp|date:"F" }}</p>
+                                    </div>
+                                </div>
+                                <div class="news-caption">
+                                    <ul class="david-info">
+                                        <li> | &nbsp; &nbsp;  Porperties</li>
+                                    </ul>
+                                    <h2><a href="single-blog.html">{{ post.title }}</a></h2>
+                                    <a href="single-blog.html" class="d-btn">Read more »</a>
                                 </div>
                             </div>
-                            <div class="news-caption">
-                                <ul class="david-info">
-                                    <li> | &nbsp; &nbsp;  Porperties</li>
-                                </ul>
-                                <h2><a href="single-blog.html">Footprints in Time is perfect
-                                    House in Kurashiki</a></h2>
-                                <a href="single-blog.html" class="d-btn">Read more »</a>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <!-- single-news -->
-                        <div class="single-news mb-30">
-                            <div class="news-img">
-                                <img src="{% static 'main/assets/img/david/david_2.png' %}" alt="">
-                                <div class="news-date text-center">
-                                    <span>24</span>
-                                    <p>Now</p>
-                                </div>
-                            </div>
-                            <div class="news-caption">
-                                <ul class="david-info">
-                                    <li> | &nbsp; &nbsp;  Porperties</li>
-                                </ul>
-                                <h2><a href="single-blog.html">Footprints in Time is perfect
-                                    House in Kurashiki</a></h2>
-                                <a href="single-blog.html" class="d-btn">Read more » </a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                </div>
             </div>
         </div>
