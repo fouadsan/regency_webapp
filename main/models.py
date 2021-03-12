@@ -5,10 +5,10 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
 
     class CATEGORIES(models.TextChoices):
-        web = 'Mining',
-        mobile = 'Agriculture',
-        desktop = 'Infrastructure',
-        upcoming = 'Power'
+        mining = 'Mining',
+        agriculture = 'Agriculture',
+        infrastructure = 'Infrastructure',
+        power = 'Power'
 
     category = models.CharField(
         max_length=20,

@@ -3,7 +3,7 @@ from .models import Project
 
 def home(request):
     context = {
-        'project' : Project.objects.all(),
+        'projects' : Project.objects.all(),
         'title': 'Home',
     }
     return render(request, 'main/index.html', context)
