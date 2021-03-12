@@ -34,6 +34,7 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.author
 
+
 class Post(models.Model):
     title = models.CharField(max_length=255)
     timestamp = models.DateField(auto_now_add=True, auto_now=False)
@@ -46,6 +47,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Comment(models.Model):
     author = models.CharField(max_length=60)
