@@ -1,0 +1,102 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+
+{% block content %}
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="{% static 'main/assets/img/hero/about.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap pt-100">
+                            <h2> Blog</h2>
+                            <nav aria-label="breadcrumb ">
+                                <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#"> Blog</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- slider Area End-->
+    <!--================Blog Area =================-->
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                {% block content2 %}
+
+                {% endblock content2 %}
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+                            <form method="post" enctype="multipart/form-data">
+                                {%csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input name="title" type="text" class="form-control" placeholder='Search Keyword'
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Search Keyword'" value="{{ title }}">
+                                        <div class="input-group-append">
+                                            <button class="btns" type="submit"><i class="ti-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Search</button>
+                            </form>
+                        </aside>
+
+                        <aside class="single_sidebar_widget post_category_widget">
+                            <h4 class="widget_title">Sections</h4>
+                            <ul class="list cat-list">
+                                <form method="get" enctype="multipart/form-data" name="section">
+                                    {% for section in sections %}
+                                        <li>
+                                            <button value="{{ section.id }}" name="section" class="d-flex">
+                                                <p>{{ section.name }}</p>
+                                                <p> &nbsp;({{ section.blogs.all.count }} Article{{ section.blogs.all.count|pluralize }})</p>
+                                            </button>
+                                        </li>
+                                    {% endfor %}
+                                </form>
+                            </ul>
+                        </aside>
+
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recent Post</h3>
+                            {% for recent_post in recent_posts %}
+                                <div class="media post_item">
+                                    <img src="{% static 'main/assets/img/post/post_1.png' %}" alt="post">
+                                    <div class="media-body">
+                                        <a href="single-blog.html">
+                                            <h3>{{ recent_post.blog_title }}</h3>
+                                        </a>
+                                        <p>January 12, 2019</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </aside>
+                        <aside class="single_sidebar_widget newsletter_widget">
+                            <h4 class="widget_title">Newsletter</h4>
+
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Subscribe</button>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -1,20 +1,22 @@
 from django.db import models
 
+class Section(models.Model):
+    name = models.CharField(max_length=150, db_index=True, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ('created_at', )
+        verbose_name = 'section'
+        verbose_name_plural = 'sections'
+
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
-
-    class CATEGORIES(models.TextChoices):
-        mining = 'Mining',
-        agriculture = 'Agriculture',
-        infrastructure = 'Infrastructure',
-        power = 'Power'
-
-    category = models.CharField(
-        max_length=20,
-        choices=CATEGORIES.choices,
-        default='Mining'
-    )
+    section = models.ForeignKey(
+        Section, related_name='projects', on_delete=models.CASCADE)
     description = models.CharField(max_length=250)
     image_one = models.URLField()
     image_two = models.URLField(blank=True)
@@ -35,25 +37,44 @@ class Testimonial(models.Model):
         return self.author
 
 
-class Post(models.Model):
-    title = models.CharField(max_length=255)
-    timestamp = models.DateField(auto_now_add=True, auto_now=False)
-    updated_on = models.DateField(auto_now_add=False, auto_now=True)
-    image = models.URLField()
-    content = models.TextField()
+# class Post(models.Model):
+#     title = models.CharField(max_length=255)
+#     timestamp = models.DateField(auto_now_add=True, auto_now=False)
+#     updated_on = models.DateField(auto_now_add=False, auto_now=True)
+#     image = models.URLField()
+#     content = models.TextField()
+#
+#     class Meta:
+#         ordering = ['-timestamp']
+#
+#     def __str__(self):
+#         return self.title
+#
+#
+# class Comment(models.Model):
+#     author = models.CharField(max_length=60)
+#     body = models.TextField()
+#     timestamp = models.DateTimeField(auto_now_add=True)
+#     post = models.ForeignKey('Post', on_delete=models.CASCADE)
+#
+#     def __str__(self):
+#         return self.author
 
-    class Meta:
-        ordering = ['-timestamp']
+
+class ProjectCounter(models.Model):
+    class CATEGORIES(models.TextChoices):
+        mining = 'Mining',
+        agriculture = 'Agriculture',
+        infrastructure = 'Infrastructure',
+        power = 'Power'
+
+    category = models.CharField(
+        max_length=20,
+        choices=CATEGORIES.choices,
+        default='Mining',
+        unique=True,
+    )
+    number = models.IntegerField()
 
     def __str__(self):
-        return self.title
-
-
-class Comment(models.Model):
-    author = models.CharField(max_length=60)
-    body = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)
-    post = models.ForeignKey('Post', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.author
+        return f"{self.category} number"
