@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% load crispy_forms_field %}
 
-{% block content2 %}
+{% block content3 %}
 
     <div class="col-lg-8 mb-5 mb-lg-0">
         <div class="blog_left_sidebar">
@@ -11,8 +11,8 @@
                 {% for data in page_obj %}
                     <article class="blog_item">
                         <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="{% static 'main/assets/img/blog/single_blog_1.png' %}" alt="">
-                            <a href="#" class="blog_item_date">
+                            <img class="card-img rounded-0" src="{{ data.image }}" alt="">
+                            <a href="{% url 'blog:blog' data.id %}" class="blog_item_date">
                                 <h3>{{ data.timestamp|date:"d" }}</h3>
                                 <p>{{ data.timestamp|date:"F" }}</p>
                             </a>
@@ -24,12 +24,12 @@
                             </a>
                             <p>{{ data.blog }}</p>
                             <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-cog"></i> {{ data.section }}</a></li>
+                                <li><a href="{% url 'main:home' %}"><i class="fa fa-cog"></i> {{ data.section }}</a></li>
                                 {% for comment in comments %}
                                     {% if comment.blog_id == data.id %}
-                                        <li><a href="#"><i class="fa fa-comments"></i>{{ forloop.counter }} Comment{{ forloop.counter|pluralize }}</a></li>
+                                        <li><a href="{% url 'blog:blog' data.id %}"><i class="fa fa-comments"></i>{{ forloop.counter }} Comment{{ forloop.counter|pluralize }}</a></li>
                                     {% else %}
-                                        <li><a href="#"><i class="fa fa-comments"></i>0 Comment</a></li>
+                                        <li><a href="{% url 'blog:blog' data.id %}"><i class="fa fa-comments"></i>0 Comment</a></li>
                                     {% endif %}
                                 {% endfor %}
                             </ul>
@@ -74,4 +74,4 @@
             {% endif %}
         </div>
     </div>
-{% endblock content2 %}
+{% endblock content3 %}

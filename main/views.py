@@ -12,6 +12,5 @@ def home(request):
         'counters': counters,
         'testimonials': testimonials,
         'blogs': blogs,
-        'title': 'Home',
     }
     return render(request, 'main/index.html', context)

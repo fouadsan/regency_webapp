@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="{% static 'main/assets/img/hero/about.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap pt-100">
+                            <h2>{{ title }}</h2>
+                            {% if subtitle %}
+                                <nav aria-label="breadcrumb ">
+                                    <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">{{ subtitle }}</a></li>
+                                    </ol>
+                                </nav>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content2 %}
+
+    {% endblock content2 %}
+<!-- slider Area End-->
+{% endblock content %}

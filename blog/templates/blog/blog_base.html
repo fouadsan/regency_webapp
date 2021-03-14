@@ -1,38 +1,16 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base2.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% load crispy_forms_field %}
 
-{% block content %}
-    <!-- slider Area Start-->
-    <div class="slider-area ">
-        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="{% static 'main/assets/img/hero/about.jpg' %}">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="hero-cap pt-100">
-                            <h2>Blog</h2>
-                            {% if title %}
-                                <nav aria-label="breadcrumb ">
-                                    <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">{{ title }}</a></li>
-                                    </ol>
-                                </nav>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- slider Area End-->
+{% block content2 %}
     <!--================Blog Area =================-->
     <section class="blog_area section-padding">
         <div class="container">
             <div class="row">
-                {% block content2 %}
+                {% block content3 %}
 
-                {% endblock content2 %}
+                {% endblock content3 %}
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget search_widget">
@@ -75,7 +53,7 @@
                                 <div class="media post_item">
                                     <img src="{% static 'main/assets/img/post/post_1.png' %}" alt="post">
                                     <div class="media-body">
-                                        <a href="single-blog.html">
+                                        <a href="{% url 'blog:blog' recent_post.id %}">
                                             <h3>{{ recent_post.blog_title }}</h3>
                                         </a>
                                         <p>January 12, 2019</p>
@@ -100,4 +78,4 @@
             </div>
         </div>
     </section>
-{% endblock content %}
+{% endblock content2 %}

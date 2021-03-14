@@ -27,6 +27,7 @@ def BlogListView(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {
+        'title': 'Blog',
         'sections': sections,
         'page_obj': page_obj,
         'comments': comments,
@@ -57,7 +58,8 @@ def BlogDetailView(request, _id):
         form = CommentForm()
 
     context = {
-        'title' : f'Blog: {_id}',
+        'title': 'Blog',
+        'subtitle' : f'Blog: {_id}',
         'data': data,
         'form': form,
         'sections': sections,
