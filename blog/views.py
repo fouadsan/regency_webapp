@@ -7,12 +7,13 @@ from main.models import Section
 def BlogListView(request):
     dataset = BlogModel.objects.all()
     sections = Section.objects.all()
+    comments = CommentModel.objects.all()
     recent_posts = BlogModel.objects.all()[:3]
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
-            title = form.cleaned_data['title']
-            dataset = BlogModel.objects.filter(blog_title__icontains=form['title'].value())
+            titleBlog = form.cleaned_data['titleBlog']
+            dataset = BlogModel.objects.filter(blog_title__icontains=form['titleBlog'].value())
     else:
         form = SearchForm()
 
@@ -28,6 +29,7 @@ def BlogListView(request):
     context = {
         'sections': sections,
         'page_obj': page_obj,
+        'comments': comments,
         'recent_posts': recent_posts,
         'form': form,
     }
@@ -38,6 +40,8 @@ def BlogDetailView(request, _id):
     try:
         data = BlogModel.objects.get(id=_id)
         comments = CommentModel.objects.filter(blog=data)
+        sections = Section.objects.all()
+        recent_posts = BlogModel.objects.all()[:3]
     except BlogModel.DoesNotExist:
         raise Http404('Data does not exist')
 
@@ -48,13 +52,16 @@ def BlogDetailView(request, _id):
                                    comment_text=form.cleaned_data['comment_text'],
                                    blog=data)
             Comment.save()
-            return redirect(f'/blogs/blog/{_id}')
+            return redirect(f'blogs/{_id}')
     else:
         form = CommentForm()
 
     context = {
+        'title' : f'Blog: {_id}',
         'data': data,
         'form': form,
+        'sections': sections,
+        'recent_posts': recent_posts,
         'comments': comments,
     }
     return render(request, 'blog/detailview.html', context)

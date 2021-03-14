@@ -24,8 +24,14 @@
                             </a>
                             <p>{{ data.blog }}</p>
                             <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                <li><a href="#"><i class="fa fa-cog"></i> {{ data.section }}</a></li>
+                                {% for comment in comments %}
+                                    {% if comment.blog_id == data.id %}
+                                        <li><a href="#"><i class="fa fa-comments"></i>{{ forloop.counter }} Comment{{ forloop.counter|pluralize }}</a></li>
+                                    {% else %}
+                                        <li><a href="#"><i class="fa fa-comments"></i>0 Comment</a></li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
                     </article>

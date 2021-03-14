@@ -9,7 +9,7 @@ class CommentForm(forms.Form):
         return f"{self.comment_text} by {self.your_name}"
 
 class SearchForm(forms.Form):
-    title = forms.CharField(max_length=20)
+    titleBlog = forms.CharField(max_length=20)
 
 class SectionSearch(forms.ModelForm):
     class Meta:
