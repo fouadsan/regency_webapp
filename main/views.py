@@ -14,3 +14,7 @@ def home(request):
         'blogs': blogs,
     }
     return render(request, 'main/index.html', context)
+
+def about(request):
+    projects = Project.objects.all()[:6]
+    return render(request, 'main/about.html', {'title':'About'})

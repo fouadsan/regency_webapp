@@ -55,7 +55,7 @@
                     <div class="col-lg-12">
                         <div class="section-tittle mb-55">
                             <div class="front-text">
-                                <h2 class="">Our Services</h2>
+                                <h2 class="">What We Do</h2>
                             </div>
                             <span class="back-text">Services</span>
                         </div>
@@ -128,7 +128,7 @@
                     <div class="support-caption">
                         <p class="pera-top">Mollit anim laborum duis au dolor in voluptcate velit ess cillum dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit cillu.</p>
                         <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.</p>
-                        <a href="about.html" class="btn red-btn2">read more</a>
+                        <a href="{% url 'main:about' %}" class="btn red-btn2">read more</a>
                     </div>
                 </div>
                 <div class="right-content">
@@ -155,7 +155,7 @@
                                 <div class="front-text">
                                     <h2 class="">Latest Projects</h2>
                                 </div>
-                                <span class="back-text">Gallary</span>
+                                <span class="back-text">Gallery</span>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -360,7 +360,7 @@
                             <div class="front-text">
                                 <h2 class="">Our team</h2>
                             </div>
-                            <span class="back-text">exparts</span>
+                            <span class="back-text">Experts</span>
                         </div>
                     </div>
                 </div>
@@ -480,8 +480,8 @@
                                     <ul class="david-info">
                                         <li> | &nbsp; &nbsp;  Porperties</li>
                                     </ul>
-                                    <h2><a href="single-blog.html">{{ blog.blog_title }}</a></h2>
-                                    <a href="single-blog.html" class="d-btn">Read more »</a>
+                                    <h2><a href="{% url 'blog:blogs' %}">{{ blog.blog_title }}</a></h2>
+                                    <a href="{% url 'blog:blogs' %}" class="d-btn">Read more »</a>
                                 </div>
                             </div>
                         </div>

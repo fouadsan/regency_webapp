@@ -84,7 +84,7 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="{% url 'main:home' %}">Home</a></li>
-                                            <li><a href="{% url 'main:home' %}">Who We Are</a></li>
+                                            <li><a href="{% url 'main:about' %}">Who We Are</a></li>
                                             <li><a href="{% url 'main:home' %}">What We Do</a>
                                                 <ul class="submenu">
                                                     <li><a href="{% url 'main:home' %}">Mining</a></li>
@@ -95,14 +95,14 @@
                                             </li>
                                             <li><a href="{% url 'main:home' %}">Projects</a></li>
                                             <li><a href="{% url 'blog:blogs' %}">Blog</a></li>
-                                            <li><a href="{% url 'main:home' %}">Contact</a></li>
+                                            <li><a href="{% url 'contact' %}">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-3">
                                 <div class="header-right-btn f-right d-none d-lg-block">
-                                    <a href="#" class="btn">Contact Now</a>
+                                    <a href="{% url 'contact' %}" class="btn">Contact Now</a>
                                 </div>
                             </div>
                             <!-- Mobile Menu -->
@@ -143,10 +143,11 @@
                                     <div class="footer-tittle">
                                         <h4>Quick Links</h4>
                                         <ul>
-                                            <li><a href="{% url 'main:home' %}">About</a></li>
+                                            <li><a href="{% url 'main:about' %}">About</a></li>
                                             <li><a href="{% url 'main:home' %}">Services</a></li>
                                             <li><a href="{% url 'main:home' %}">Projects</a></li>
-                                            <li><a href="{% url 'main:home' %}">Contact Us</a></li>
+                                            <li><a href="{% url 'main:home' %}">News</a></li>
+                                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -154,7 +155,7 @@
                             <div class="col-lg-3 col-md-4 col-sm-7">
                                 <div class="single-footer-caption mb-50">
                                     <div class="footer-tittle">
-                                        <h4>Contact</h4>
+                                        <a href="{% url 'contact' %}"><h4>Contact</h4></a>
                                         <div class="footer-pera">
                                             <p class="info1">198 West 21th Street, Suite 721 New York,NY 10010</p>
                                         </div>
@@ -207,7 +208,6 @@
 		<!-- Jquery, Popper, Bootstrap -->
 		<script src="{% static 'main/assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
         <script src="{% static 'main/assets/js/popper.min.js' %}"></script>
-        <script src="{% static 'main/assets/js/popper.js' %}"></script>
         <script src="{% static 'main/assets/js/bootstrap.min.js' %}"></script>
 	    <!-- Jquery Mobile Menu -->
         <script src="{% static 'main/assets/js/jquery.slicknav.min.js' %}"></script>

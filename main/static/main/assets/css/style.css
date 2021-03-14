@@ -79,3 +79,12 @@
     background: #f0a500;
     text-align: justify;
 }
+
+.footer-tittle h4:hover {
+    color: #f0a500;
+}
+
+.contact-info .media-body h3:hover {
+    color: #f0a500;
+}
+
