@@ -1,12 +1,13 @@
 from django.db import models
 from main.models import Section
 
+
 class BlogModel(models.Model):
     blog_title = models.CharField(max_length=20)
     section = models.ForeignKey(
         Section, related_name='blogs', on_delete=models.CASCADE)
     blog = models.TextField()
-    image = models.URLField()
+    image = models.ImageField(blank=True, upload_to='images')
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated_on = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -15,6 +16,7 @@ class BlogModel(models.Model):
 
     def __str__(self):
         return f"Blog: {self.blog_title}"
+
 
 class CommentModel(models.Model):
     your_name = models.CharField(max_length=20)

@@ -123,6 +123,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -130,3 +135,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 DEFAULT_FROM_EMAIL = 'Company Team <noreplay@fafopalermo.com>'
+
+mailchimp_api_key = '86f6d77c6af064e511a25cff745f253f-us19'
+mailchimp_server = 'us19'
+mailchimp_list_id = '63868f3e69'

@@ -1,3 +1,5 @@
+from django.http import Http404
+
 from .models import BlogModel, CommentModel
 from .forms import *
 from django.shortcuts import render, redirect
@@ -49,17 +51,17 @@ def BlogDetailView(request, _id):
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
-            Comment = CommentModel(your_name=form.cleaned_data['your_name'],
+            comment = CommentModel(your_name=form.cleaned_data['your_name'],
                                    comment_text=form.cleaned_data['comment_text'],
                                    blog=data)
-            Comment.save()
+            comment.save()
             return redirect(f'blogs/{_id}')
     else:
         form = CommentForm()
 
     context = {
         'title': 'Blog',
-        'subtitle' : f'Blog: {_id}',
+        'subtitle': f'Blog: {_id}',
         'data': data,
         'form': form,
         'sections': sections,

@@ -85,13 +85,14 @@
                                         <ul id="navigation">
                                             <li><a href="{% url 'main:home' %}">Home</a></li>
                                             <li><a href="{% url 'main:about' %}">Who We Are</a></li>
-                                            <li><a href="{% url 'main:home' %}">What We Do</a>
-                                                <ul class="submenu">
-                                                    <li><a href="{% url 'main:home' %}">Mining</a></li>
-                                                    <li><a href="{% url 'main:home' %}">Agriculture</a></li>
-                                                    <li><a href="{% url 'main:home' %}">Infrastructure</a></li>
-                                                    <li><a href="{% url 'main:home' %}">Power</a></li>
-                                                </ul>
+                                            <li><a href="{% url 'main:services' %}">What We Do</a>
+                                                {% if sections %}
+                                                    <ul class="submenu">
+                                                        {% for section in sections %}
+                                                            <li><a href="{% url 'main:service_detail' section.id %}">{{ section.name }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
                                             </li>
                                             <li><a href="{% url 'main:home' %}">Projects</a></li>
                                             <li><a href="{% url 'blog:blogs' %}">Blog</a></li>
@@ -131,7 +132,7 @@
                                 <div class="single-footer-caption mb-30">
                                     <!-- logo -->
                                     <div class="footer-tittle">
-                                        <a href="#top"><h4>REGENCY</h4></a>
+                                        <a href="{% url 'main:home' %}"><h4>REGENCY</h4></a>
                                         <div class="footer-pera">
                                             <p class="info1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
                                         </div>
@@ -171,10 +172,11 @@
                                     <!-- Form -->
                                     <div class="footer-form">
                                         <div id="mc_embed_signup">
-                                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
-                                                <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+                                            <form method="post" name="subscribe" class="subscribe_form" novalidate="true">
+                                                {% csrf_token %}
+                                                <input type="email" name="email" id="newsletter-form-email" placeholder=" Email Address " value="{{ email }}" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
                                                 <div class="form-icon">
-                                                    <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                    <button type="submit" name="subscribe" class="email_icon newsletter-submit button-contactForm">
                                                         SIGN UP
                                                     </button>
                                                 </div>
@@ -189,6 +191,13 @@
                         <!-- Copy-Right -->
                         <div class="row align-items-center">
                             <div class="col-xl-12 ">
+                                       {% if messages %}
+                                            {% for message in messages %}
+                                                <div class="alert alert-{{ message.tags }} mt--20">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                       {% endif %}
                                 <div class="footer-copy-right">
                                     <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved. Developed by <a href="https://fouadben.herokuapp.com" target="_blank">Fouad B.</a></p>
                                     <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
@@ -236,7 +245,6 @@
         <script src="{% static 'main/assets/js/jquery.form.js' %}"></script>
         <script src="{% static 'main/assets/js/jquery.validate.min.js' %}"></script>
         <script src="{% static 'main/assets/js/mail-script.js' %}"></script>
-        <script src="{% static 'main/assets/js/jquery.ajaxchimp.min.js' %}"></script>
 
 		<!-- Jquery Plugins, main Jquery -->
         <script src="{% static 'main/assets/js/plugins.js' %}"></script>

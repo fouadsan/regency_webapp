@@ -1,7 +1,12 @@
 from django.db import models
+from django.contrib import admin
+
 
 class Section(models.Model):
     name = models.CharField(max_length=150, db_index=True, unique=True)
+    description = models.CharField(max_length=250, default="this is a description about this service")
+    image_one = models.ImageField(upload_to='images')  # Important!!!!!!
+    image_two = models.ImageField(upload_to='images')  # Important!!!!!!
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -13,19 +18,35 @@ class Section(models.Model):
         verbose_name_plural = 'sections'
 
 
+class About(models.Model):
+    title = models.CharField(max_length=255, blank=True)
+    content = models.TextField()
+    image = models.ImageField(upload_to='images')
+    since = models.IntegerField()
+
+    def __str__(self):
+        return f"About"
+
+
 class Project(models.Model):
     title = models.CharField(max_length=100)
     section = models.ForeignKey(
         Section, related_name='projects', on_delete=models.CASCADE)
     description = models.CharField(max_length=250)
-    image_one = models.URLField()
-    image_two = models.URLField(blank=True)
-    image_three = models.URLField(blank=True)
-    image_four = models.URLField(blank=True)
-    project_url = models.URLField(blank=True)
+    image_one = models.ImageField(upload_to='images')
+    image_two = models.ImageField(blank=True, upload_to='images')
+    image_three = models.ImageField(blank=True, upload_to='images')
+    image_four = models.ImageField(blank=True, upload_to='images')
+    project_url = models.URLField(blank=True, unique=True)
 
     def __str__(self):
         return self.title
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=100, db_index=True, unique=True)
+    occupation = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='images')
 
 
 class Testimonial(models.Model):
@@ -35,30 +56,6 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.author
-
-
-# class Post(models.Model):
-#     title = models.CharField(max_length=255)
-#     timestamp = models.DateField(auto_now_add=True, auto_now=False)
-#     updated_on = models.DateField(auto_now_add=False, auto_now=True)
-#     image = models.URLField()
-#     content = models.TextField()
-#
-#     class Meta:
-#         ordering = ['-timestamp']
-#
-#     def __str__(self):
-#         return self.title
-#
-#
-# class Comment(models.Model):
-#     author = models.CharField(max_length=60)
-#     body = models.TextField()
-#     timestamp = models.DateTimeField(auto_now_add=True)
-#     post = models.ForeignKey('Post', on_delete=models.CASCADE)
-#
-#     def __str__(self):
-#         return self.author
 
 
 class ProjectCounter(models.Model):
@@ -78,3 +75,11 @@ class ProjectCounter(models.Model):
 
     def __str__(self):
         return f"{self.category} number"
+
+
+class Signup(models.Model):
+    email = models.EmailField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
