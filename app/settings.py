@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 from google.oauth2 import service_account
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -129,5 +130,5 @@ mailchimp_api_key = '86f6d77c6af064e511a25cff745f253f-us19'
 mailchimp_server = 'us19'
 mailchimp_list_id = '63868f3e69'
 
-
+django_heroku.settings(locals())
 
