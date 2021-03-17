@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "regency-django",
+  "private_key_id": "f7769344293e6187b7c64a48ae93bc159f73d300",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCnBX0jyzHsPOBZ\nQXumM5xrcfz9ASpuhV0vfDMhAXRbR4C+2i5NXt2GamYOYTvLa+Of3pdJU6UP/YAF\nEgv/06VqruXAKr3Xk1R8V72TZtPSsREp2OrAKsCROBLxPkwwtig8tvYiatppp8r7\nLrtWLYEJ6bMHDcv8aKDJ//hpBNHw1nldYTNCf6HyOXnuvpdzB4WN9UxSfmXUY19k\npyoXg9zeFqEgRGvH3xr1Ut557TGtOMAoi5sTtfQUVp3xqf2CC+3CGc5XhP9e62oT\n47wbVwnfvI+h3N6OVP8Mf1YfflLmUdvLBQqVJZGvIsKMNblQIl1yMTgCZEpEYfye\nT4vuxTvxAgMBAAECggEACB3JasGfU7BSo6u9t0InTgZcSawylGvZLytNLcOtFJl5\nLW0bVmmvgK5vdq/tcLF1volZ1zegHBKQ085AdIZjsbc9lXTORGlVr/Qwk3bqAMFX\niO3QXJXHRVdQ/lWtbKmRc3/dnqcMJZnAkKvA8UtlS6bGayeVu9aWx7Ivb2ULUbV6\nV/kPBW8cwCvMBqVzcOxeicgjK9iOOwNCGKSUiPEIPIoDdPSMUVRoxZoJqIufWy4H\n2ZN8kpSUlFU4IYq7bvwagWDmNSy4Q83COEhyPj7SaS9oknW8fRh4oty2tB5QI604\n5gMkVvORJq0bmTUkRPFse2Eb1EL8uaFNRjzvjS07AQKBgQDPojYDnts6kIC5kG60\nhb9p9NQmeiVBbTecCkPwr9OJak9BuRz0vPKGtFsXq680yPAi/tg+JZp0mjoewx4m\n72aK/iFoW8T7sxCHneFwSE9hRd1m+XxaYlSiecCUspM8ptF1LCW6eGNwwGqdxHDt\n/gDKtAdGLEUw6IAZOS+HrTlswQKBgQDN7XTG+yYG2+uT8PPmrL/SRtK86AZXa7GD\nA64lpi5kfNyx0XXbVJO1HAbtkE3zqd/VCmeR5azMMIRGNZxhA+cerrd2Rm6H5kqn\nxymU0R2XMpLqNe1KkiGfH6sydSLaH1G7gaE1dTURdZTQNkvW8xAJH2uKZNDymtca\nwXK/a0MrMQKBgQDLoqhc5qjWCDDnTXr1u5LehQqobfUp9MasV/kIDjlmNQhkSfvX\nH5SwfiQ00+Gy4Dt75vsIAHM6VqQX1X816mdkfBchtZc80AKvLy2RpKmNmiqpOpg2\nQOgGrWgtrfHvcyBMTa728el9BInMD4Q+NXZrVyMnNHXroKs5kbdG1qJSQQKBgEEn\n4MsUq/N/ogotMv7JqefegM9Emr0OVhweDfvbmNIyr6GTpLbBC/tB4u9HuWJfXXMK\n17pR8Vqp/zA3xkLr+TS8E1BY+KAHPZfYbE+p2rL8TX/NkEcH9ZtjaceNSHm7byDk\n4x0G+MONcIhwpY5dWbWJO32OaI5ab7UHgEcQqTABAoGAZb2LJJ2XP/lMXz2QnrWA\nsCLakY2ky6vOUP/BX73oM2W4ceWSWJUdWoAPow5kAUtmL+ijt4eh2AdpZe9gN7Bu\nEckQx3oDKf7wMMqslOnLZ0XRm3v/QfMWv/aAI/pAlPbgG87xfD37vMwEEm7OVdLA\nawIJ6CIYoH7TGyWHbqvkcHM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "regency-upload-admin@regency-django.iam.gserviceaccount.com",
+  "client_id": "117442557971074323713",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/regency-upload-admin%40regency-django.iam.gserviceaccount.com"
+}
