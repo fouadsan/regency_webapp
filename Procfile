@@ -1,1 +1,1 @@
-web: gunicorn regency_webapp.wsgi
+web: gunicorn app.wsgi
