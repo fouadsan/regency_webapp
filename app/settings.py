@@ -125,9 +125,9 @@ EMAIL_HOST_USER = os.environ['EMAIL_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
 DEFAULT_FROM_EMAIL = 'Company Team <noreplay@fafopalermo.com>'
 
-# mailchimp_api_key = os.environ['MAILCHIMP_API_KEY']
-# mailchimp_server = os.environ['MAILCHIMP_SERVER']
-# mailchimp_list_id = os.environ['MAILCHIMP_LIST_ID']
+mailchimp_api_key = os.environ['MAILCHIMP_API_KEY']
+mailchimp_server = os.environ['MAILCHIMP_SERVER']
+mailchimp_list_id = os.environ['MAILCHIMP_LIST_ID']
 
 # django_heroku.settings(locals())
 
