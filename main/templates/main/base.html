@@ -34,7 +34,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{% static 'main/assets/img/logo/regency-logo.jpg' %}" alt="">
+                    <img src="{% static 'main/assets/img/logo/regency-logo.png' %}" alt="" style="width: 128px;">
                 </div>
             </div>
         </div>
@@ -50,8 +50,8 @@
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="header-info-left">
                                     <ul>
-                                        <li><a href="tel:+213-5-61-58-77-80" style="color: #00af91;">+(213) 561-587-780</a></li>
-                                        <li><a href="mailto: f.benayad95@gmail.com" style="color: #00af91;">f.benayad95@gmail.com</a></li>
+                                        <li><a href="tel:+213-5-61-58-77-80" style="color: #070b11;">+(213) 561-587-780</a></li>
+                                        <li><a href="mailto: f.benayad95@gmail.com" style="color: #070b11;">f.benayad95@gmail.com</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-info-right">
@@ -73,9 +73,9 @@
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
                                     <!-- logo-1 -->
-                                    <a href="{% url 'main:home' %}" class="big-logo"><img src="{% static 'main/assets/img/logo/regency-logo.jpg' %}" alt="" style="max-width: 155px"></a>
+                                    <a href="{% url 'main:home' %}" class="big-logo"><img src="{% static 'main/assets/img/logo/regency-logo.png' %}" alt="" style="max-width: 155px;"></a>
                                     <!-- logo-2 -->
-                                    <a href="{% url 'main:home' %}" class="small-logo"><img src="{% static 'main/assets/img/logo/loder-logo.png' %}" alt=""></a>
+                                    <a href="{% url 'main:home' %}" class="small-logo"><img src="{% static 'main/assets/img/logo/regency-logo.png' %}" alt="" style="width: 128px;"></a>
                                 </div>
                             </div>
                             <div class="col-xl-8 col-lg-8 col-md-8">
@@ -131,8 +131,11 @@
                             <div class="col-lg-4 col-md-4 col-sm-8">
                                 <div class="single-footer-caption mb-30">
                                     <!-- logo -->
+                                    <div class="footer-logo">
+                                        <a href="{% url 'main:home' %}"><img src="{% static 'main/assets/img/logo/regency-logo.png' %}" alt="" style="width: 128px;"></a>
+                                    </div>
                                     <div class="footer-tittle">
-                                        <a href="{% url 'main:home' %}"><h4>REGENCY</h4></a>
+
                                         <div class="footer-pera">
                                             <p class="info1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
                                         </div>
