@@ -5,11 +5,11 @@ import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'vdg)3emzfdzbms(@rczayy9zc=-09$u!r7&#ilmtd6=99mn^uu'
+SECRET_KEY = os.environ['SECRET_KEY']
 
-DEBUG = True
+DEBUG = os.environ['DEBUG_VALUE']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://regencyapp.herokuapp.com']
 
 
 # Application definition
@@ -121,15 +121,15 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_PORT = os.environ['EMAIL_PORT']
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_HOST_USER = os.environ['EMAIL_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
 DEFAULT_FROM_EMAIL = 'Company Team <noreplay@fafopalermo.com>'
 
-mailchimp_api_key = '86f6d77c6af064e511a25cff745f253f-us19'
-mailchimp_server = 'us19'
-mailchimp_list_id = '63868f3e69'
+mailchimp_api_key = os.environ['MAILCHIMP_API_KEY']
+mailchimp_server = os.environ['MAILCHIMP_SERVER']
+mailchimp_list_id = os.environ['MAILCHIMP_LIST_ID']
 
 django_heroku.settings(locals())
 
