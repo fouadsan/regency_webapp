@@ -9,7 +9,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = os.environ['DEBUG_VALUE']
 
-ALLOWED_HOSTS = ['https://regencyapp.herokuapp.com']
+ALLOWED_HOSTS = ['regencyapp.herokuapp.com']
 
 
 # Application definition
