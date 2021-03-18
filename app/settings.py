@@ -112,7 +112,7 @@ GS_BUCKET_NAME = 'regency-images'
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -131,5 +131,5 @@ mailchimp_api_key = '86f6d77c6af064e511a25cff745f253f-us19'
 mailchimp_server = 'us19'
 mailchimp_list_id = '63868f3e69'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
