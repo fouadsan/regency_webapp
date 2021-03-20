@@ -1,0 +1,46 @@
+{% extends 'main/base2.html' %}
+{% load static %}
+
+{% block content2 %}
+ <!-- Services Details Start -->
+    <div class="services-details-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="single-services section-padding2">
+                        <div class="details-img mb-40">
+                            <h2>{{ data.title }}</h2>
+                            <div class="row gallery-item">
+                                <div class="col-md-4">
+                                    <figure class="snip1321">
+                                        {% if data.image_one.url %}
+                                            <div class="single-gallery-image" style="background: url({{ data.image_one.url }}); no-repeat scroll center center / cover;"></div>
+                                        {% endif %}
+                                        <figcaption>
+                                             <a href="{{ data.image_one.url }}" class="img-pop-up">
+                                                <i class="fa fa-search"></i>
+                                             </a>
+                                            {% if data.image_two %}
+                                                <a href="{{ data.image_two.url }}" class="img-pop-up"></a>
+                                            {% endif %}
+                                            {% if data.image_three %}
+                                                <a href="{{ data.image_three.url }}" class="img-pop-up"></a>
+                                            {% endif %}
+                                            {% if data.image_four %}
+                                                <a href="{{ data.image_four.url }}" class="img-pop-up"></a>
+                                            {% endif %}
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-caption">
+                            <p>{{ data.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services Details End -->
+{% endblock content2 %}

@@ -142,12 +142,12 @@
                                                     <div class="col-lg-4 col-md-6">
                                                         <div class="single-project mb-30">
                                                             <div class="project-img">
-                                                                <img src="{{ project.image_one }}" alt="">
+                                                                <img src="{{ project.image_one.url }}" alt="">
                                                             </div>
                                                             <div class="project-cap">
-                                                                <a href="project_details.html" class="plus-btn"><i class="ti-search"></i></a>
-                                                                <h4><a href="project_details.html">{{ project.title }}</a></h4>
-                                                                <h4><a href="project_details.html">{{ project.category }}</a></h4>
+                                                                <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                                <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                                <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -159,16 +159,16 @@
                                     <div class="project-caption">
                                         <div class="row">
                                             {% for project in projects %}
-                                                {% if project.category == "Mining" %}
+                                                {% if project.section_id == 1 %}
                                                     <div class="col-lg-4 col-md-6">
                                                         <div class="single-project mb-30">
                                                             <div class="project-img">
-                                                                <img src="{{ project.image_one }}" alt="">
+                                                                <img src="{{ project.image_one.url }}" alt="">
                                                             </div>
                                                             <div class="project-cap">
-                                                                <a href="project_details.html" class="plus-btn"><i class="ti-search"></i></a>
-                                                                <h4><a href="project_details.html">{{ project.title }}</a></h4>
-                                                                <h4><a href="project_details.html">{{ project.category }}</a></h4>
+                                                                <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                                <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                                <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -183,15 +183,15 @@
 
                                                     <div class="col-lg-4 col-md-6">
                                                         {% for project in projects %}
-                                                            {% if project.category == "Agriculture" %}
+                                                            {% if project.section_id == 2 %}
                                                                 <div class="single-project mb-30">
                                                                     <div class="project-img">
-                                                                        <img src="{{ project.image_one }}" alt="">
+                                                                        <img src="{{ project.image_one.url }}" alt="">
                                                                     </div>
                                                                     <div class="project-cap">
-                                                                        <a href="project_details.html" class="plus-btn"><i class="ti-search"></i></a>
-                                                                        <h4><a href="project_details.html">{{ project.title }}</a></h4>
-                                                                        <h4><a href="project_details.html">{{ project.category }}</a></h4>
+                                                                        <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                                        <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                                        <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
                                                                     </div>
                                                                 </div>
                                                             {% endif %}
@@ -205,16 +205,16 @@
                                     <div class="project-caption">
                                         <div class="row">
                                             {% for project in projects %}
-                                                {% if project.category == "Infrastructure" %}
+                                                {% if project.section_id == 3 %}
                                                     <div class="col-lg-4 col-md-6">
                                                         <div class="single-project mb-30">
                                                             <div class="project-img">
-                                                                <img src="{{ project.image_one }}" alt="">
+                                                                <img src="{{ project.image_one.url }}" alt="">
                                                             </div>
                                                             <div class="project-cap">
-                                                                <a href="project_details.html" class="plus-btn"><i class="ti-search"></i></a>
-                                                                <h4><a href="project_details.html">{{ project.title }}</a></h4>
-                                                                <h4><a href="project_details.html">{{ project.category }}</a></h4>
+                                                                <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                                <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                                <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -227,16 +227,16 @@
                                     <div class="project-caption">
                                         <div class="row">
                                             {% for project in projects %}
-                                                {% if project.category == "Power" %}
+                                                {% if project.section_id == 4 %}
                                                     <div class="col-lg-4 col-md-6">
                                                         <div class="single-project mb-30">
                                                             <div class="project-img">
-                                                                <img src="{{ project.image_one }}" alt="">
+                                                                <img src="{{ project.image_one.url }}" alt="">
                                                             </div>
                                                             <div class="project-cap">
-                                                                <a href="project_details.html" class="plus-btn"><i class="ti-search"></i></a>
-                                                                <h4><a href="project_details.html">{{ project.title }}</a></h4>
-                                                                <h4><a href="project_details.html">{{ project.category }}</a></h4>
+                                                                <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                                <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                                <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -245,14 +245,9 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
-
-
                         <!-- End Nav Card -->
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -260,7 +255,7 @@
         <!-- Project Area End -->
         <!-- contact with us Start -->
         {% if contacts %}
-            <section class="contact-with-area"style="margin-bottom: 3rem;">
+            <section class="contact-with-area" style="margin-bottom: 3rem;">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-8 col-lg-9 offset-xl-1 offset-lg-1">
@@ -413,7 +408,7 @@
                                 <!-- single-news -->
                                 <div class="single-news mb-30">
                                     <div class="news-img">
-                                        <img src="{{ blog.image }}" alt="">
+                                        <img src="{{ blog.image.url }}" alt="">
                                         <div class="news-date text-center">
                                             <span>{{ blog.timestamp|date:"d" }}</span>
                                             <p>{{ blog.timestamp|date:"F" }}</p>
@@ -421,7 +416,7 @@
                                     </div>
                                     <div class="news-caption">
                                         <ul class="david-info">
-                                            <li> | &nbsp; &nbsp;  Porperties</li>
+                                            <li><i class="fa fa-cog"></i> {{ blog.section }}</li>
                                         </ul>
                                         <h2><a href="{% url 'blog:blogs' %}">{{ blog.blog_title }}</a></h2>
                                         <a href="{% url 'blog:blogs' %}" class="d-btn">Read more »</a>

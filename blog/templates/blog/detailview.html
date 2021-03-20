@@ -7,15 +7,15 @@
       <div class="col-lg-8 posts-list">
          <div class="single-post">
             <div class="feature-img">
-               <img class="img-fluid" src="{{ data.image }}" alt="">
+               <img class="img-fluid" src="{{ data.image.url }}" alt="">
             </div>
             <div class="blog_details">
                <h2>{{ data.blog_title }}</h2>
                <ul class="blog-info-link mt-3 mb-4">
-                  <li><a href="#"><i class="fa fa-cog"></i> {{ data.section }}</a></li>
-                  <li><a href="#"><i class="fa fa-comments"></i> ({{ comments.count }} Comment{{ comments.count|pluralize }})</a></li>
+                  <li><a href="{% url 'main:service_detail' data.section.id %}"><i class="fa fa-cog"></i> {{ data.section }}</a></li>
+                  <li><a><i class="fa fa-comments"></i> ({{ comments.count }} Comment{{ comments.count|pluralize }})</a></li>
                </ul>
-               <p class="excert">{{ data.blog }}</p>
+               <blockquote class="generic-blockquote">{{ data.blog }}</blockquote>
             </div>
          </div>
          <div class="navigation-top">

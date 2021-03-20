@@ -55,7 +55,7 @@ def BlogDetailView(request, _id):
                                    comment_text=form.cleaned_data['comment_text'],
                                    blog=data)
             comment.save()
-            return redirect(f'blogs/{_id}')
+            return redirect(f'/blogs/{_id}')
     else:
         form = CommentForm()
 

@@ -3,7 +3,7 @@ from main.models import Section
 
 
 class BlogModel(models.Model):
-    blog_title = models.CharField(max_length=20)
+    blog_title = models.CharField(max_length=100)
     section = models.ForeignKey(
         Section, related_name='blogs', on_delete=models.CASCADE)
     blog = models.TextField()
@@ -19,7 +19,7 @@ class BlogModel(models.Model):
 
 
 class CommentModel(models.Model):
-    your_name = models.CharField(max_length=20)
+    your_name = models.CharField(max_length=100)
     comment_text = models.TextField()
     blog = models.ForeignKey('BlogModel', on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)

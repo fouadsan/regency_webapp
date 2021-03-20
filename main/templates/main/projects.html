@@ -1,10 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main/base2.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block content2 %}
+<!-- Project Area Start -->
+    {% if projects %}
+        <section class="project-area  section-padding30">
+            <div class="container">
+               <div class="project-heading mb-35">
+                    <div class="row align-items-end">
+                        <div class="col-lg-6">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle section-tittle3">
+                                <div class="front-text">
+                                    <h2 class="">Latest Projects</h2>
+                                </div>
+                                <span class="back-text">Gallery</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="properties__button">
+                                <!--Nav Button  -->
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab"  data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="false"> Show  all </a>
+                                        <a class="nav-item nav-link" id="Mining-tab" data-toggle="tab" href="#Mining" role="tab" aria-controls="Mining" aria-selected="false">Mining</a>
+                                        <a class="nav-item nav-link" id="Agriculture-tab" data-toggle="tab" href="#Agriculture" role="tab" aria-controls="Agriculture" aria-selected="false">Agriculture</a>
+                                        <a class="nav-item nav-link" id="Infrastructure-tab" data-toggle="tab" href="#Infrastructure" role="tab" aria-controls="Infrastructure" aria-selected="false">Infrastructure</a>
+                                        <a class="nav-item nav-link" id="power-tab" data-toggle="tab" href="#power" role="tab" aria-controls="power" aria-selected="false">Power</a>
+                                    </div>
+                                </nav>
+                                <!--End Nav Button  -->
+                            </div>
+                        </div>
+                    </div>
+               </div>
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="tab-content active" id="nav-tabContent">
+                        <!-- Nav Card -->
+                            <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <div class="project-caption">
+                                    <div class="row">
+                                        {% for project in projects %}
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="single-project mb-30">
+                                                        <div class="project-img">
+                                                            <img src="{{ project.image_one.url }}" alt="">
+                                                        </div>
+                                                        <div class="project-cap">
+                                                            <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                            <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                            <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Mining" role="tabpanel" aria-labelledby="Mining-tab">
+                                <div class="project-caption">
+                                    <div class="row">
+                                        {% for project in projects %}
+                                            {% if project.section_id == 1 %}
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="single-project mb-30">
+                                                        <div class="project-img">
+                                                            <img src="{{ project.image_one.url }}" alt="">
+                                                        </div>
+                                                        <div class="project-cap">
+                                                            <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                            <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                            <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="tab-pane fade" id="Agriculture" role="tabpanel" aria-labelledby="Agriculture-tab">
+                                <div class="project-caption">
+                                    <div class="row">
+
+                                                <div class="col-lg-4 col-md-6">
+                                                    {% for project in projects %}
+                                                        {% if project.section_id == 2 %}
+                                                            <div class="single-project mb-30">
+                                                                <div class="project-img">
+                                                                    <img src="{{ project.image_one.url }}" alt="">
+                                                                </div>
+                                                                <div class="project-cap">
+                                                                    <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                                    <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                                    <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="tab-pane fade" id="Infrastructure" role="tabpanel" aria-labelledby="Infrastructure-tab">
+                                <div class="project-caption">
+                                    <div class="row">
+                                        {% for project in projects %}
+                                            {% if project.section_id == 3 %}
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="single-project mb-30">
+                                                        <div class="project-img">
+                                                            <img src="{{ project.image_one.url }}" alt="">
+                                                        </div>
+                                                        <div class="project-cap">
+                                                            <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                            <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                            <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="tab-pane fade" id="Power" role="tabpanel" aria-labelledby="Power-tab">
+                                <div class="project-caption">
+                                    <div class="row">
+                                        {% for project in projects %}
+                                            {% if project.section_id == 4 %}
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="single-project mb-30">
+                                                        <div class="project-img">
+                                                            <img src="{{ project.image_one.url }}" alt="">
+                                                        </div>
+                                                        <div class="project-cap">
+                                                            <a href="{% url 'main:project' project.id %}" class="plus-btn"><i class="ti-search"></i></a>
+                                                            <h4><a href="{% url 'main:project' project.id %}">{{ project.title }}</a></h4>
+                                                            <h4><a href="{% url 'main:project' project.id %}">{{ project.section }}</a></h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    <!-- End Nav Card -->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    <!-- Project Area End -->
+{% endblock content2 %}

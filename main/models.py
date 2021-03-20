@@ -32,11 +32,11 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     section = models.ForeignKey(
         Section, related_name='projects', on_delete=models.CASCADE)
-    description = models.CharField(max_length=250)
+    description = models.TextField()
     image_one = models.ImageField(upload_to='images')
-    image_two = models.ImageField(blank=True, upload_to='images')
-    image_three = models.ImageField(blank=True, upload_to='images')
-    image_four = models.ImageField(blank=True, upload_to='images')
+    image_two = models.ImageField(blank=True, upload_to='images', null=True)
+    image_three = models.ImageField(blank=True, upload_to='images', null=True)
+    image_four = models.ImageField(blank=True, upload_to='images', null=True)
     project_url = models.URLField(blank=True, unique=True)
 
     def __str__(self):
