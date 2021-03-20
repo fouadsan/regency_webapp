@@ -33,7 +33,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="single-service-cap mb-30">
                                 <div class="service-img">
-                                    <img src="{% static 'main/assets/img/gallery/service-1.png' %}" alt="">
+                                    <img src="{{ section.image_one.url }}" alt="">
                                 </div>
                                 <div class="service-cap">
                                     <h4><a href="{% url 'main:service_detail' section.id %}">{{ section.name }}</a></h4>
