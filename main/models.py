@@ -4,7 +4,7 @@ from django.contrib import admin
 
 class Section(models.Model):
     name = models.CharField(max_length=150, db_index=True, unique=True)
-    description = models.CharField(max_length=250, default="this is a description about this service")
+    description = models.TextField()
     image_one = models.ImageField(upload_to='images')  # Important!!!!!!
     image_two = models.ImageField(upload_to='images')  # Important!!!!!!
     created_at = models.DateTimeField(auto_now_add=True)
