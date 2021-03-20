@@ -60,7 +60,7 @@ def BlogDetailView(request, _id):
         form = CommentForm()
 
     context = {
-        'title': 'Blog',
+        'title': 'Blog Detail',
         'subtitle': f'Blog: {_id}',
         'data': data,
         'form': form,
