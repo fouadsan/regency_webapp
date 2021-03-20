@@ -37,7 +37,7 @@ class Project(models.Model):
     image_two = models.ImageField(blank=True, upload_to='images', null=True)
     image_three = models.ImageField(blank=True, upload_to='images', null=True)
     image_four = models.ImageField(blank=True, upload_to='images', null=True)
-    project_url = models.URLField(blank=True, unique=True)
+    project_url = models.URLField(blank=True)
 
     def __str__(self):
         return self.title
