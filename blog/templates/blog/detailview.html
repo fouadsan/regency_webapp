@@ -13,7 +13,6 @@
                <h2>{{ data.blog_title }}</h2>
                <ul class="blog-info-link mt-3 mb-4">
                   <li><a href="{% url 'main:service_detail' data.section.id %}"><i class="fa fa-cog"></i> {{ data.section }}</a></li>
-                  <li><a><i class="fa fa-comments"></i> ({{ comments.count }} Comment{{ comments.count|pluralize }})</a></li>
                </ul>
                <blockquote class="generic-blockquote">{{ data.blog }}</blockquote>
             </div>
