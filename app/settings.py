@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-DEBUG = eval(os.environ['DEBUG_VALUE'])
+DEBUG = False
 
 ALLOWED_HOSTS = ['regencyapp.herokuapp.com', '127.0.0.1']
 
