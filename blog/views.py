@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from main.models import Section
 
-def BlogListView(request):
+def BlogListView(request, _id):
     dataset = BlogModel.objects.all()
     sections = Section.objects.all()
     data_b = BlogModel.objects.get(id=_id)
