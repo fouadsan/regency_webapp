@@ -128,5 +128,5 @@ mailchimp_api_key = os.environ['MAILCHIMP_API_KEY']
 mailchimp_server = os.environ['MAILCHIMP_SERVER']
 mailchimp_list_id = os.environ['MAILCHIMP_LIST_ID']
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
