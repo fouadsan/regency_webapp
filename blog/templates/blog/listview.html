@@ -25,7 +25,6 @@
                             <p>{{ data.blog }}</p>
                             <ul class="blog-info-link">
                                 <li><a href="{% url 'main:service_detail' data.section.id %}"><i class="fa fa-cog"></i> {{ data.section }}</a></li>
-                                <li><a href="{% url 'blog:blog' data.id %}"><i class="fa fa-comments"></i>({{ data.comments.count }} Comment{{ data.comments.count|pluralize }})</a></li>
                             </ul>
                         </div>
                     </article>

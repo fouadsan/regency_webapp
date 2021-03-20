@@ -9,7 +9,6 @@ from main.models import Section
 def BlogListView(request):
     dataset = BlogModel.objects.all()
     sections = Section.objects.all()
-    comments = CommentModel.objects.all()
     recent_posts = BlogModel.objects.all()[:3]
     if request.method == 'POST':
         form = SearchForm(request.POST)
