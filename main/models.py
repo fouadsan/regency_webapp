@@ -48,6 +48,9 @@ class Team(models.Model):
     occupation = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='images')
 
+    def __str__(self):
+        return self.name
+
 
 class Testimonial(models.Model):
     author = models.CharField(max_length=60)

@@ -15,7 +15,7 @@ class BlogModel(models.Model):
         ordering = ('-timestamp', )
 
     def __str__(self):
-        return f"Blog: {self.blog_title}"
+        return self.blog_title
 
 
 class CommentModel(models.Model):
