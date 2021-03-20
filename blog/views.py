@@ -31,7 +31,6 @@ def BlogListView(request):
         'title': 'Blog',
         'sections': sections,
         'page_obj': page_obj,
-        'comments': comments,
         'recent_posts': recent_posts,
         'form': form,
     }
